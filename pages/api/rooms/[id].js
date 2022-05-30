@@ -6,8 +6,9 @@ import {
     getRoom,
     updateRoom,
 } from '../../../controllers/RoomController';
+import handleError from '../../../middlewares/errors';
 
-const handler = nc();
+const handler = nc({ onError: handleError });
 
 dbConnect();
 
