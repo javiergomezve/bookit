@@ -4,7 +4,9 @@ import catchAsyncErrors from '../middlewares/catchAsyncErrors';
 import ApiFeatures from '../utils/apiFeatures';
 
 const allRooms = catchAsyncErrors(async (req, res) => {
-    const apiFeatures = new ApiFeatures(Room.find(), req.query).search();
+    const apiFeatures = new ApiFeatures(Room.find(), req.query)
+        .search()
+        .filter();
 
     const rooms = await apiFeatures.query;
 
