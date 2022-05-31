@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import RoomItem from './room/RoomItem';
 
 const Home = () => {
-    const { rooms } = useSelector(state => state.allRooms);
+    const { rooms, error } = useSelector(state => state.allRooms);
 
     return (
         <section id="rooms" className="container mt-5">
@@ -20,6 +20,7 @@ const Home = () => {
                         <b>No rooms.</b>
                     </div>
                 ) : (
+                    rooms &&
                     rooms.map(room => <RoomItem key={room._id} room={room} />)
                 )}
             </div>
