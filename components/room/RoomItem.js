@@ -8,6 +8,7 @@ const RoomItem = ({ room }) => {
             <div className="card p-2">
                 <Image
                     className="card-img-top mx-auto"
+                    alt={room.name}
                     src={room.images[0].url}
                     height={170}
                     width={200}
